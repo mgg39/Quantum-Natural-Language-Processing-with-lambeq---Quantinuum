@@ -52,3 +52,15 @@ parser = BobcatParser(verbose='text')
 diagram = parser.sentence2diagram(sentence) 
 #diagram.draw(figsize=(9,4), fontsize=13) #Test Figure 7
 #looks the same as Test Figure 2
+##-----------------------------------------------------------------
+from lambeq import AtomicType, IQPAnsatz
+
+# Define atomic types
+N = AtomicType.NOUN
+S = AtomicType.SENTENCE
+
+# Convert string diagram to quantum circuit
+ansatz = IQPAnsatz({N: 1, S: 1}, n_layers=2)
+discopy_circuit = ansatz(diagram)
+#discopy_circuit.draw(figsize=(15,10)) #Test Figure 8
+
