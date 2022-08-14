@@ -38,7 +38,17 @@ normalised_diagram = rewritten_diagram.normal_form()
 curry_functor = Rewriter(['curry'])
 
 curried_diagram = curry_functor(normalised_diagram)
-curried_diagram.draw(figsize=(9,4), fontsize=13) #Test Figure 5
+#curried_diagram.draw(figsize=(9,4), fontsize=13) #Test Figure 5
+
+#normalization curry results -> faster execution
+#curried_diagram.normal_form().draw(figsize=(5,4), fontsize=13) #Test Figure 6
 ##-----------------------------------------------------------------
+from lambeq import BobcatParser
 
+sentence = 'John walks in the park'
 
+# Get a string diagram
+parser = BobcatParser(verbose='text')
+diagram = parser.sentence2diagram(sentence) 
+#diagram.draw(figsize=(9,4), fontsize=13) #Test Figure 7
+#looks the same as Test Figure 2
