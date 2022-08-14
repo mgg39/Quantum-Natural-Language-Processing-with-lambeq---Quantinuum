@@ -63,4 +63,16 @@ S = AtomicType.SENTENCE
 ansatz = IQPAnsatz({N: 1, S: 1}, n_layers=2)
 discopy_circuit = ansatz(diagram)
 #discopy_circuit.draw(figsize=(15,10)) #Test Figure 8
+##-----------------------------------------------------------------
+#Quantum circuit
+from pytket.circuit.display import render_circuit_jupyter
+import IPython
 
+tket_circuit = discopy_circuit.to_tk()
+
+render_circuit_jupyter(tket_circuit)
+##-----------------------------------------------------------------
+#Import to qiskit
+from pytket.extensions.qiskit import tk_to_qiskit
+
+qiskit_circuit = tk_to_qiskit(tket_circuit)
