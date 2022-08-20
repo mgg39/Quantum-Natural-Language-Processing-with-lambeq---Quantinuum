@@ -14,9 +14,10 @@ from pytket.extensions.qiskit import AerBackend
 from lambeq import TketModel
 from lambeq import QuantumTrainer, SPSAOptimizer
 from lambeq import Dataset
+import matplotlib.pyplot as plt
 
 BATCH_SIZE =42
-EPOCHS = 1000
+EPOCHS = 100
 SEED = 2
 
 #Input data
@@ -105,3 +106,22 @@ val_dataset = Dataset(val_circuits, val_labels, shuffle=False)
 
 #Train model
 trainer.fit(train_dataset, val_dataset, evaluation_step=1, logging_step=100)
+
+#Printing train model
+fig, ((ax_tl, ax_tr), (ax_bl, ax_br)) = plt.subplots(2, 2, sharex=True, sharey='row', figsize=(10, 6))
+ax_tl.set_title('Training set')
+ax_tr.set_title('Development set')
+ax_bl.set_xlabel('Iterations')
+ax_br.set_xlabel('Iterations')
+ax_bl.set_ylabel('Accuracy')
+ax_tl.set_ylabel('Loss')
+
+colours = iter(plt.rcParams['axes.prop_cycle'].by_key()['color'])
+ax_tl.plot(trainer.train_epoch_costs[::10], color=next(colours))
+ax_bl.plot(trainer.train_results['acc'][::10], color=next(colours))
+ax_tr.plot(trainer.val_costs[::10], color=next(colours))
+ax_br.plot(trainer.val_results['acc'][::10], color=next(colours))
+
+# print test accuracy
+test_acc = acc(model(val_circuits), val_labels)
+print('Validation accuracy:', test_acc.item())
