@@ -1,3 +1,4 @@
+from curses import intrflush
 from lambeq import BobcatParser
 from discopy import grammar
 from lambeq import Rewriter
@@ -20,4 +21,5 @@ ansatz = IQPAnsatz({N: 1, S: 1}, n_layers=2)
 discopy_circuit = ansatz(diagram)
 
 tket_circuit = discopy_circuit.to_tk()
-render_circuit_jupyter(tket_circuit) #how do I print this??
+circuit = render_circuit_jupyter(tket_circuit) 
+print(circuit) #run windows
