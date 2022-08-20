@@ -22,5 +22,7 @@ def read_data(filename):
     return labels, sentences
 
 
-train_labels, train_data = read_data('./MC1.TXT')
-val_labels, val_data = read_data('./MC1.TXT')
+train_labels, train_data = read_data('Task5/train_data.txt')
+val_labels, val_data = read_data('Task5/test_data.txt')
+
+train_data[:5]
