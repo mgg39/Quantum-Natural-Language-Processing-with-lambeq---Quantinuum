@@ -10,6 +10,8 @@ from lambeq import BobcatParser
 from discopy import grammar
 from discopy import Dim
 from lambeq import AtomicType, SpiderAnsatz
+#from pytket.extensions.qiskit import AerBackend
+from lambeq import TketModel
 
 BATCH_SIZE =42
 EPOCHS = 1000
@@ -30,7 +32,10 @@ train_labels, train_data = read_data('Task5/train_data.txt')
 #print(train_data[:8])
 #print(train_labels[:8])
 
-#val_labels, val_data = read_data('Task5/test_data.txt')
+val_labels, val_data = read_data('Task5/val_data.txt')
+#print(val_data[:8])
+#print(val_labels[:8])
+
 
 #parser
 parser = BobcatParser(root_cats=('NP', 'N'), verbose='text')

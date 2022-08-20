@@ -1,9 +1,3 @@
-devoted hacker writes code
-hacker writes complicated code
-skilful programmer creates advanced code
-skilful hacker writes complicated code 
-experienced cook prepares meal
-experienced chef prepares meal
 devoted programmer creates advanced code
 skilful programmer writes advanced code
 hacker creates code
@@ -12,9 +6,7 @@ programmer creates code
 cook prepares complicated dish
 chef prepares complicated dish
 skilful hacker creates code
-skilful chef creates tasty dish
 skilful hacker writes code
-cook creates complicated dish
 hacker writes code
 hacker writes code
 devoted hacker creates code

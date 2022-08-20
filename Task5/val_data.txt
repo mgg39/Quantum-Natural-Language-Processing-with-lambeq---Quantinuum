@@ -1,0 +1,8 @@
+0 devoted hacker writes code
+0 hacker writes complicated code
+0 skilful programmer creates advanced code
+0 skilful hacker writes complicated code 
+1 experienced cook prepares meal
+1 experienced chef prepares meal
+1 skilful chef creates tasty dish
+1 cook creates complicated dish
