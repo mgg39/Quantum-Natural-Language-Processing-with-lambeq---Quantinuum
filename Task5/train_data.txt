@@ -1,4 +1,8 @@
-['cook creates complicated dish, experienced chef prepares complicated dish', 
-'skilful programmer creates code, devoted hacker writes code', 
-'skilful cook creates meal, devoted hacker creates complicated code', 
-'hacker writes code, skilful hacker creates code',]
+1 cook creates complicated dish
+1 experienced chef prepares complicated dish
+0 skilful programmer creates code
+0 devoted hacker writes code
+1 skilful cook creates meal
+0 devoted hacker creates complicated code'
+0 hacker writes code
+0 skilful hacker creates code

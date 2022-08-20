@@ -6,8 +6,12 @@ warnings.filterwarnings('ignore')
 os.environ['TOKENIZERS_PARALLELISM'] = 'true'
 
 import numpy as np
+from lambeq import BobcatParser
+from discopy import grammar
+from discopy import Dim
+from lambeq import AtomicType, SpiderAnsatz
 
-BATCH_SIZE = 30
+BATCH_SIZE =42
 EPOCHS = 1000
 SEED = 2
 
@@ -23,6 +27,23 @@ def read_data(filename):
 
 
 train_labels, train_data = read_data('Task5/train_data.txt')
-val_labels, val_data = read_data('Task5/test_data.txt')
+#print(train_data[:8])
+#print(train_labels[:8])
 
-train_data[:5]
+#val_labels, val_data = read_data('Task5/test_data.txt')
+
+#parser
+parser = BobcatParser(root_cats=('NP', 'N'), verbose='text')
+train_diagrams = parser.sentences2diagrams(train_data, suppress_exceptions=True)
+
+train_diagrams = [
+    diagram.normal_form()
+    for diagram in train_diagrams if diagram is not None
+]
+
+train_labels = [
+    label for (diagram, label)
+    in zip(train_diagrams, train_labels)
+    if diagram is not None]
+
+#train_diagrams[0].draw(figsize=(9, 5), fontsize=12)
