@@ -21,7 +21,7 @@ from pytket.extensions.qiskit import AerBackend
 from pytket.circuit.display import render_circuit_jupyter
 
 BATCH_SIZE = 50
-EPOCHS = 100
+EPOCHS = 1000
 SEED = 2
 
 #Input data MC1
