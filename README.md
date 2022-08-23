@@ -3,7 +3,7 @@ Womanium Quantum Hackathon 2022
 Team name: Maria
 Team members (1) : Maria Gragera Garces
 
-##Repository organization
+## Repository organization
 This repository is divided into various folder that contain the submissions for every task in the challenge.
 The final submission, aka task 6, associates sentences with either food or coding, and distinguishes between positive or neutral sentiment.
 The overall system is quite simplistic and relies on a solid pre-processing step, that categorizes the sentences association to those two elements through a state vector.
