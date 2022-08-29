@@ -11,3 +11,4 @@ If the sentence is associate with food, and has positive language, the resulting
 If the sentence is associate with food, and has neutral language, the resulting state will be [0,0].
 If the sentence is associate with code, and has positive language, the resulting state will be [1,1].
 If the sentence is associate with code, and has neutral language, the resulting state will be [1,0].
+
